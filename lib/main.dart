@@ -1,8 +1,14 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  // Pass all uncaught errors from the framework to Crashlytics.
+  FlutterError.onError = Crashlytics.instance.recordFlutterError;
+  runApp(MyApp());
+}
+
 FirebaseAnalytics analytics = FirebaseAnalytics();
 
 class MyApp extends StatelessWidget {
