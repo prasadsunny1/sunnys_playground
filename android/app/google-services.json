@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "197221410477",
+    "firebase_url": "https://sunny-s-playground.firebaseio.com",
+    "project_id": "sunny-s-playground",
+    "storage_bucket": "sunny-s-playground.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197221410477:android:2ca266a7e3e65a57",
+        "android_client_info": {
+          "package_name": "dev.prasadsunny1.sunnys_playground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197221410477-8pn7o1q1pgimgmmee9ib0k87bb44r2k1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.prasadsunny1.sunnys_playground",
+            "certificate_hash": "26f52971b03d1dde76df60d04e01eb5a9c914785"
+          }
+        },
+        {
+          "client_id": "197221410477-0i6a4kd8kifq4jq3hb4qqe2jh5ojso9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbh8b0XIte90AEYWu2UKINJvtxMqDqthA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197221410477-0i6a4kd8kifq4jq3hb4qqe2jh5ojso9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
