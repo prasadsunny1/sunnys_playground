@@ -3,6 +3,7 @@ import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
@@ -84,6 +85,23 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            FlatButton(
+              child: Text("Privacy Policy"),
+              onPressed: () async {
+                const url = 'https://prasadsunny1.dev/privacy_policy.html';
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
