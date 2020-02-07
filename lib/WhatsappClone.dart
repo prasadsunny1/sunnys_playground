@@ -15,11 +15,11 @@ class WhatsappClone extends StatelessWidget {
               return new ListTile(
                 title: Text(
                   "Sunny",
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
                 subtitle: Text(
                   "Kya bhai,kaisa chal raha hai.Mauj hai ki aise hi bakhat kat raha hai",
-                  style: Theme.of(context).textTheme.body1,
+                  style: Theme.of(context).textTheme.bodyText2,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
