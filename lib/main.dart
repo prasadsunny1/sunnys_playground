@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:sunnys_playground/WhatsappClone.dart';
+import 'package:sunnys_playground/blur_hash_page.dart';
 
 final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
@@ -61,7 +62,21 @@ class MyHomePage extends StatelessWidget {
                 ),
               );
             },
-          )
+          ),
+          ListTile(
+            title: Text("BlurHash"),
+            subtitle: Text("UI"),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return new BlurHashPage();
+                  },
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
