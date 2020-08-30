@@ -2,15 +2,18 @@ import 'dart:async';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:sunnys_playground/WhatsappClone.dart';
-import 'package:sunnys_playground/blur_hash_page.dart';
+import 'package:flutter/material.dart';
+import 'package:sunnys_playground/home/home_page.dart';
 
 final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   // Pass all uncaught errors from the framework to Crashlytics.
   FlutterError.onError = Crashlytics.instance.recordFlutterError;
 
@@ -35,50 +38,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Playground"),
-      ),
-      body: ListView(
-        children: <Widget>[
-          ListTile(
-            title: Text("Whatsapp clone"),
-            subtitle: Text("UI"),
-            trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).push(
-                new MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return new WhatsappClone();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            title: Text("BlurHash"),
-            subtitle: Text("UI"),
-            trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).push(
-                new MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return new BlurHashPage();
-                  },
-                ),
-              );
-            },
-          ),
-        ],
-      ),
+      home: HomePage(),
     );
   }
 }

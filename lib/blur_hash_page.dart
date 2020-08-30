@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 class BlurHashPage extends StatelessWidget {
-  var hashList = [
+  final List<String> hashList = [
     "L5H2EC=PM+yV0g-mq.wG9c010J}I",
     'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
     "BkF=hb}MQ+=S#lNL",
