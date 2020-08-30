@@ -18,7 +18,7 @@ class WhatsappClone extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 subtitle: Text(
-                  "Kya bhai,kaisa chal raha hai.Mauj hai ki aise hi bakhat kat raha hai",
+                  "This is a test message",
                   style: Theme.of(context).textTheme.bodyText2,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
