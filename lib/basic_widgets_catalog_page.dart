@@ -68,6 +68,92 @@ class _BasicWidgetCatalogPageState extends State<BasicWidgetCatalogPage> {
                     ],
                   ),
                 ),
+                WidgetShowcase(
+                  title: "Button",
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      textStyle: const TextStyle(fontSize: 20),
+                      alignment: Alignment.bottomCenter,
+                      enabledMouseCursor: SystemMouseCursors.allScroll,
+                      enableFeedback: true,
+                      side: const BorderSide(),
+                    ),
+                    onPressed: () {},
+                    child: const Text('Enabled'),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "FilledButton",
+                  child: FilledButton(
+                    onPressed: () {},
+                    child: const Text('Enabled'),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "FilledButton.tonal",
+                  child: FilledButton.tonal(
+                    onPressed: () {},
+                    child: const Text('Enabled'),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "OutlinedButton",
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: const Text('Enabled'),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "TextButton",
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text('Enabled'),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "Icon button",
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.add),
+                      ),
+                      IconButton.filled(
+                        onPressed: () {},
+                        icon: Icon(Icons.add),
+                      ),
+                      IconButton.filledTonal(
+                        onPressed: () {},
+                        icon: Icon(Icons.add),
+                      ),
+                    ],
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "FAB",
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      FloatingActionButton(
+                        child: Icon(Icons.chevron_left),
+                        onPressed: () {},
+                      ),
+                      SizedBox(width: 8),
+                      FloatingActionButton.large(
+                        child: Icon(Icons.play_arrow),
+                        onPressed: () {},
+                      ),
+                      SizedBox(width: 8),
+                      FloatingActionButton.small(
+                        child: Icon(Icons.chevron_right),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
             WidgetShowcase(
