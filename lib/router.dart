@@ -22,7 +22,7 @@ var router = GoRouter(
         ),
         GoRoute(
           path: Routes.basicWidgets,
-          builder: (context, state) => const BasicWidegtCatalogPage(),
+          builder: (context, state) => const BasicWidgetCatalogPage(),
         ),
       ]
     ),
