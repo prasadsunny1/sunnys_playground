@@ -151,9 +151,98 @@ class _BasicWidgetCatalogPageState extends State<BasicWidgetCatalogPage> {
                         child: Icon(Icons.chevron_right),
                         onPressed: () {},
                       ),
+                      FloatingActionButton.extended(
+                        onPressed: () {},
+                        label: Text("abc"),
+                        icon: Icon(Icons.add),
+                      )
                     ],
                   ),
                 ),
+                WidgetShowcase(
+                  title: "PlaceHolder",
+                  child: SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: Placeholder(
+                      child: Text("child widget"),
+                      color: Colors.blue,
+                      strokeWidth: 4,
+                      fallbackHeight: 50,
+                      fallbackWidth: 50,
+                    ),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "Image",
+                  child: Image.network(
+                    "https://fastly.picsum.photos/id/481/200/300.jpg?hmac=mlbIyGYg8TMyId9tAwMZz1VppVzNObkpL0cVVxnjTVo",
+                    height: 150,
+                    width: 100,
+                    cacheHeight: 150,
+                    cacheWidth: 100,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "FlutterLogo",
+                  child: FlutterLogo(
+                    style: FlutterLogoStyle.horizontal,
+                    curve: Curves.bounceIn,
+                    size: 100,
+                    textColor: Colors.blue,
+                  ),
+                ),
+                WidgetShowcase(
+                  // Sizedbox's size will not go beyond the parent size..
+                  // even if you specify explicitly
+                  title: "SizedBox",
+                  child: SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: SizedBox(
+                      width: 200,
+                      height: 100,
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "FractionallySizedBox 0.5w 1.5h",
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    color: Colors.yellow,
+                    child: FractionallySizedBox(
+                      heightFactor: 1.5,
+                      widthFactor: 0.5,
+                      alignment: Alignment.topRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(0.0),
+                        child: Container(
+                          color: Colors.red,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                WidgetShowcase(
+                  title: "Aspect 16/9",
+                  child: Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: AspectRatio(
+                        aspectRatio: 16 / 9,
+                        child: Container(
+                          color: Colors.red,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
               ],
             ),
             WidgetShowcase(
