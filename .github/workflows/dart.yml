@@ -22,7 +22,8 @@ jobs:
          SIGNING_STORE_PASSWORD: ${{ secrets.KEY_PASSWORD }}
      - name: Decode Keystore
        run: |
-         base64 -d "${{secrets.RELEASE_KEYSTORE_FILE}}" > android/key.jks
+         echo "${{secrets.RELEASE_KEYSTORE_FILE}}" > keyfile
+         base64 -d keyfile > android/key.jks
      - name: Create key.properties
        run: |
         touch android/key.properties
