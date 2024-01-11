@@ -15,10 +15,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Android
 
-### android flutter_build
+### android build
 
 ```sh
-[bundle exec] fastlane android flutter_build
+[bundle exec] fastlane android build
 ```
 
 build flutter appbundle

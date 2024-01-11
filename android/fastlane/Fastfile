@@ -17,7 +17,7 @@ default_platform(:android)
 
 platform :android do
   desc "build flutter appbundle"
-  lane :flutter_build do
+  lane :build do
     sh "flutter build appbundle"
     # Built build/app/outputs/flutter-apk/app-release.apk (19.6MB)
     # build/app/outputs/bundle/release/app-release.aab
