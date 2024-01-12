@@ -66,8 +66,8 @@ jobs:
       - run: bundle exec fastlane ${{ github.event.inputs.lane || 'beta' }}
         env:
           PLAY_STORE_CONFIG_JSON:  ${{ secrets.PLAY_STORE_CONFIG_JSON }}
-          
         working-directory: android
+        
       - name: Build APK
         run: flutter build apk
       - uses: actions/upload-artifact@v4.0.0     
