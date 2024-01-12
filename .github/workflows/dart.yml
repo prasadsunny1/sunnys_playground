@@ -24,6 +24,7 @@ jobs:
        run: |
          echo "${{secrets.RELEASE_KEYSTORE_FILE}}" > keyfile
          base64 -d keyfile > android/key.jks
+     - run: echo "🎉 The job was automatically triggered by a ${{ github.env }} event."
      - name: Create key.properties
        run: |
         touch android/key.properties
@@ -31,6 +32,9 @@ jobs:
         keyPassword=$SIGNING_KEY_PASSWORD
         keyAlias=$SIGNING_KEY_ALIAS
         storeFile=../key.jks"  > ./android/key.properties
+     - name: Create key.properties
+       run: |
+        cat ./android/key.properties
      - name: Get dependencies
        run: flutter pub get
      - name: Build APK
