@@ -1,0 +1,3 @@
+This is the showcase app where I am publishing my flutter experiments and learning.
+
+Well, I have just started learning flutter and wanted to publish everything(For my own reference). If you have any suggestions then please shoot a mail on prasadsunny1@gmail.com, or just DM on twitter @prasadsunny1
