@@ -30,6 +30,8 @@ jobs:
         uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225
         with:
           channel: stable
+          cache: true
+          cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:'
       - run: flutter doctor -v
 
       # Checkout gallery code and get packages.
