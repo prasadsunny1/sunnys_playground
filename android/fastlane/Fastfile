@@ -16,25 +16,39 @@
 default_platform(:android)
 
 platform :android do
-  desc "build flutter appbundle"
-  lane :build do
-    sh "flutter build appbundle"
-    # Built build/app/outputs/flutter-apk/app-release.apk (19.6MB)
-    # build/app/outputs/bundle/release/app-release.aab
-  end
-
-  # desc "Submit a new Beta Build to Crashlytics Beta"
-  # lane :beta do
-  #   gradle(task: "clean assembleRelease")
-  #   crashlytics
-  
-  #   # sh "your_script.sh"
-  #   # You can also use other beta testing services here
+  # desc "build flutter appbundle"
+  # lane :build do
+  #   sh "flutter build appbundle"
+  #   # Built build/app/outputs/flutter-apk/app-release.apk (19.6MB)
+  #   # build/app/outputs/bundle/release/app-release.aab
   # end
 
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    # gradle(task: "clean assembleRelease")
-    upload_to_play_store(aab_paths: "../build/app/outputs/bundle/release/app-release.aab", track:"production")
+  # desc "Deploy a new version to the Google Play"
+  # lane :deploy do
+  #   # gradle(task: "clean assembleRelease")
+  #   upload_to_play_store(aab_paths: "../build/app/outputs/bundle/release/app-release.aab", track:"production")
+  # end
+
+# Following is from https://github.com/flutter/gallery/blob/main/android/fastlane/Fastfile
+  desc "Submit a new beta build to Google Play"
+  lane :beta do
+    # TODO: Re-enable deferred components once https://github.com/flutter/gallery/issues/926 is fixed
+    sh "flutter build appbundle -v"
+    upload_to_play_store(
+      track: 'beta',
+      aab: '../build/app/outputs/bundle/release/app-release.aab',
+      json_key_data: ENV['PLAY_STORE_CONFIG_JSON'],
+      )
   end
+
+  desc "Promote beta track to prod"
+  lane :promote_to_production do
+    upload_to_play_store(
+      track: 'beta',
+      track_promote_to: 'production',
+      skip_upload_changelogs: true,
+      json_key_data: ENV['PLAY_STORE_CONFIG_JSON'],
+      )
+  end
+
 end
