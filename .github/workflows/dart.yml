@@ -27,9 +27,9 @@ jobs:
      - name: Create key.properties
        run: |
         touch android/key.properties
-        echo "storePassword=<storePassword>
-        keyPassword=<keyPassword>
-        keyAlias=<keyAlias>
+        echo "storePassword=$SIGNING_STORE_PASSWORD
+        keyPassword=$SIGNING_KEY_PASSWORD
+        keyAlias=$SIGNING_KEY_ALIAS
         storeFile=../key.jks"  > ./android/key.properties
      - name: Get dependencies
        run: flutter pub get
