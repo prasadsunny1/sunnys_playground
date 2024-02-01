@@ -119,15 +119,15 @@ class _BasicWidgetCatalogPageState extends State<BasicWidgetCatalogPage> {
                     children: [
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                       ),
                       IconButton.filled(
                         onPressed: () {},
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                       ),
                       IconButton.filledTonal(
                         onPressed: () {},
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                       ),
                     ],
                   ),
@@ -138,38 +138,38 @@ class _BasicWidgetCatalogPageState extends State<BasicWidgetCatalogPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       FloatingActionButton(
-                        child: Icon(Icons.chevron_left),
+                        child: const Icon(Icons.chevron_left),
                         onPressed: () {},
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       FloatingActionButton.large(
-                        child: Icon(Icons.play_arrow),
+                        child: const Icon(Icons.play_arrow),
                         onPressed: () {},
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       FloatingActionButton.small(
-                        child: Icon(Icons.chevron_right),
+                        child: const Icon(Icons.chevron_right),
                         onPressed: () {},
                       ),
                       FloatingActionButton.extended(
                         onPressed: () {},
-                        label: Text("abc"),
-                        icon: Icon(Icons.add),
+                        label: const Text("abc"),
+                        icon: const Icon(Icons.add),
                       )
                     ],
                   ),
                 ),
-                WidgetShowcase(
+                const WidgetShowcase(
                   title: "PlaceHolder",
                   child: SizedBox(
                     width: 100,
                     height: 100,
                     child: Placeholder(
-                      child: Text("child widget"),
                       color: Colors.blue,
                       strokeWidth: 4,
                       fallbackHeight: 50,
                       fallbackWidth: 50,
+                      child: Text("child widget"),
                     ),
                   ),
                 ),
@@ -184,7 +184,7 @@ class _BasicWidgetCatalogPageState extends State<BasicWidgetCatalogPage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                WidgetShowcase(
+                const WidgetShowcase(
                   title: "FlutterLogo",
                   child: FlutterLogo(
                     style: FlutterLogoStyle.horizontal,
