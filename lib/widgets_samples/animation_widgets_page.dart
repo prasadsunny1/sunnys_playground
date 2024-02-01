@@ -11,10 +11,12 @@ class AnimationWidgetsPage extends StatelessWidget {
       ),
       body: const Row(
         children: [
-          Flexible(fit: FlexFit.tight, child: Text("hello asdsa asd sa dsa das dsad as dsa dsa das dsa das dsa das ds dsa d sad sad s sa da ads das das dsa")),
+          Flexible(
+              fit: FlexFit.tight,
+              child: Text(
+                  "hello asdsa asd sa dsa das dsad as dsa dsa das dsa das dsa das ds dsa d sad sad s sa da ads das das dsa")),
         ],
       ),
-
     );
   }
 }

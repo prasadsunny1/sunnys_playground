@@ -242,7 +242,6 @@ class _BasicWidgetCatalogPageState extends State<BasicWidgetCatalogPage> {
                     ),
                   ),
                 ),
-
               ],
             ),
             WidgetShowcase(

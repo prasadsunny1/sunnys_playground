@@ -13,18 +13,17 @@ class Routes {
 var router = GoRouter(
   routes: [
     GoRoute(
-      path: Routes.home,
-      builder: (context, state) => const WidgetCatalogPage(),
-      routes: [
-        GoRoute(
-          path: Routes.animationWidgets,
-          builder: (context, state) => const AnimationWidgetsPage(),
-        ),
-        GoRoute(
-          path: Routes.basicWidgets,
-          builder: (context, state) => const BasicWidgetCatalogPage(),
-        ),
-      ]
-    ),
+        path: Routes.home,
+        builder: (context, state) => const WidgetCatalogPage(),
+        routes: [
+          GoRoute(
+            path: Routes.animationWidgets,
+            builder: (context, state) => const AnimationWidgetsPage(),
+          ),
+          GoRoute(
+            path: Routes.basicWidgets,
+            builder: (context, state) => const BasicWidgetCatalogPage(),
+          ),
+        ]),
   ],
 );
