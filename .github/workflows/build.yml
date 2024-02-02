@@ -26,7 +26,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-          
+
       # Installs flutter and related dependency on this machine
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -59,6 +59,25 @@ jobs:
       - name: Build apk
         run: flutter build apk
       
-      # Create ios ipa
-      - name: Build ipa
-        run: flutter build ipa --no-codesign
+      # # Create ios ipa
+      # - name: Build ipa
+      #   run: flutter build ipa --no-codesign
+      
+        # Upload apk to Firebase distribution
+      - name: Upload apk to Firebase distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_TOKEN }}
+          groups: all_testers
+          file: build/app/outputs/flutter-apk/app-release.apk
+     
+      # Upload ipa to Firebase distribution
+      # - name: Upload ipa to Firebase distribution
+      #   uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
+      #   with:
+      #     appId: ${{ secrets.FIREBASE_APP_ID_IOS }}
+      #     serviceCredentialsFileContent: ${{ secrets.FIREBASE_TOKEN }}
+      #     groups: all_testers
+      #     file: build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app
+          
