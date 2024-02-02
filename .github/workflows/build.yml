@@ -14,7 +14,7 @@ jobs:
 
     # The machine, we can also use windows-latest or ubuntu-latest
     # We are choosing macos-latest because we will be also building for iOS
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
 
