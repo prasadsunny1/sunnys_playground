@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # Sets up java 11
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '11'
@@ -59,25 +59,11 @@ jobs:
       - name: Build apk
         run: flutter build apk
       
-      # # Create ios ipa
-      # - name: Build ipa
-      #   run: flutter build ipa --no-codesign
-      
         # Upload apk to Firebase distribution
       - name: Upload apk to Firebase distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
         with:
           appId: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
-          serviceCredentialsFileContent: ${{ secrets.FIREBASE_TOKEN }}
+          serviceCredentialsFileContent: ${{ secrets.SERVICE_CREDENTIALS_FILE_CONTENT }}
           groups: all_testers
           file: build/app/outputs/flutter-apk/app-release.apk
-     
-      # Upload ipa to Firebase distribution
-      # - name: Upload ipa to Firebase distribution
-      #   uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
-      #   with:
-      #     appId: ${{ secrets.FIREBASE_APP_ID_IOS }}
-      #     serviceCredentialsFileContent: ${{ secrets.FIREBASE_TOKEN }}
-      #     groups: all_testers
-      #     file: build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app
-          
